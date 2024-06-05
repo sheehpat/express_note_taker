@@ -2,6 +2,8 @@
 const express = require('express');
 const path = require('path');
 const fs = require('fs');
+const apiRoutes = require('./routes/apiRoutes');
+const htmlRoutes = require('./routes/htmlRoutes');
 
 
 const app = express();
@@ -17,9 +19,13 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(express.static('public'));
 
-app.use('/api', api);
+app.use('/api', apiRoutes);
 
-//Update the functions
+app.use('/', htmlRoutes);
+
+app.listen(PORT, () => console.log(`App listening on port ${PORT}`));
+
+/* //Update the functions
 app.get('/notes', (req, res) => {
   res.sendFile(path.join(__dirname, '../public/notes.html'));
 });
@@ -58,6 +64,4 @@ app.get('*', (req, res) => {
       });
     });
     res.send('You have successfully submitted a new note!');
-  });
-
-  app.listen(PORT, () => console.log(`App listening on port ${PORT}`));
+  }); */

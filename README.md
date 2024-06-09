@@ -12,6 +12,7 @@ Node.js, Express
   
 # Usage
 [githublink](https://github.com/sheehpat/express_note_taker)
+[Heroku](https://express-note-taker-sheehan-e60aabbc9965.herokuapp.com)
 
 # Authors and acknowledgment
 Code written by Patrick Sheehan referencing course materials for guidance.

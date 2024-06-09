@@ -40,7 +40,7 @@ const readAndAppend = (newData, file, callback) => {
             return callback(err);
         }
         const parsedData = JSON.parse(data);
-        parasedData.push(newData);
+        parsedData.push(newData);
         fs.writeFile(file, JSON.stringify(parsedData, null, 2), (err) => {
             if (err) {
                 return callback(err);
